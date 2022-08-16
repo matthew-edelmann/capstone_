@@ -92,7 +92,7 @@ This heatmap shows which boroughs are most correlated with price:
 
 ## Modelling
 
-To create the models, I will look at the entries for each borough and try to make a different model for each where needed. I'll make a baseline for each and look at various models for each borough. The baseline of the model I will use is the median of the borough price. I chose the median over the mean so that outliers don't sckew the data. We will try 5 different models to compare each borough to; linear regression, decision tree, bagging regressor, 
+To create the models, I will look at the entries for each borough and try to make a different model for each where needed. I'll make a baseline for each and look at various models for each borough. The baseline of the model I will use is the median of the borough price. I chose the median over the mean so that outliers don't sckew the data. We will try 5 different models to compare each borough to; linear regression, decision tree, bagging regressor, random forest, and extra trees.
 
 ### Manhattan:
 
