@@ -4,7 +4,7 @@
 AirBnB is a company founded in 2008. It allows home owners/renters to temporarily use their places as a hotel. The user has to put their own value per night for the guest to pay. I wanted to see if I could predict the price of an AirBnB in the New York City area. I was aiming at someone who has a space in the New York City area, and may want to use it for an AirBnB. I will try to give them an estimated price based on the borough they live in and other factors. I will also give them the errors with the model, as there are many factors I may not have such as their rent price or living expenses. The metrics I used to judge a model was R^2, mean squared error (MSE), root mean squared error (RMSE), and the average of the residuals (more on that later).
 
 ## The Data
-The data was colected from this [website](http://insideairbnb.com). This is some data released from AirBnB. I downloaded the calendar and listings data from their New York file. A brief explaination of both is as follows. We are given an ID for both to merge them together. The calendar has all the dates that the AirBnB is available. They give dates, wheather or not it is available, price, and the minimum and maximum nights one can stay. The listings has much more information. We get information about its location, the host, specs about the AirBnB such as bedrooms and bathrooms, the type of stay, info about the reviews and much more.
+The data was colected from this [website](http://insideairbnb.com). This is some data released from AirBnB. I downloaded the calendar and listings data from their New York file. A brief explaination of both is as follows. I was given an ID for both to merge them together. The calendar has all the dates that the AirBnB is available. They give dates, wheather or not it is available, price, and the minimum and maximum nights one can stay. The listings has much more information. I got the information about its location, the host, specs about the AirBnB such as bedrooms and bathrooms, the type of stay, info about the reviews and much more.
 
 The files are too big to upload to github. To download them, go to [inside airbnb](http://insideairbnb.com/get-the-data/), scroll down to "New York City, New York, United States" and download both listings.csv.gz and calendar.csv.gz
 
@@ -17,7 +17,7 @@ To clean the data, I had to fix or delete much of the entries as well as merge t
 3. Fixed the price column into being a float type.
 4. Droped the adjusted_price column.
 
-With that the calendar dataframe is done. Now we will look at the listings data frame. Here are the steps I took to clean it up.
+With that the calendar dataframe is done. Now I will look at the listings data frame. Here are the steps I took to clean it up.
 
 1. Drop all unneccisary columns. In total it was 46 columns. 
 2. Filling nan values with the word 'unknown' in the following columns: host_response_time colunm, 'review_scores_rating', 'review_scores_accuracy', 'review_scores_cleanliness', 'review_scores_checkin', 'review_scores_communication', 'review_scores_location', and 'review_scores_value'
@@ -30,7 +30,7 @@ Finally, I exported the data.
 
 ## Exploratory Data Analysis
 
-Here, we will be looking at some EDA. let's look at some of the findings:
+Here, I will be looking at some EDA. let's look at some of the findings:
 
 Price vs host_response_time:
 
@@ -92,7 +92,7 @@ This heatmap shows which boroughs are most correlated with price:
 
 ## Modelling
 
-To create the models, I will look at the entries for each borough and try to make a different model for each where needed. I'll make a baseline for each and look at various models for each borough. The baseline of the model I will use is the median of the borough price. I chose the median over the mean so that outliers don't sckew the data. We will try 5 different models to compare each borough to; linear regression, decision tree, bagging regressor, random forest, and extra trees. We will be judging the models on R^2, Mean squared error, Root mean squared error, and the mean of the residuals. The residuals are the mean of the absolute value of the actual value minus the predicted value.
+To create the models, I will look at the entries for each borough and try to make a different model for each where needed. I'll make a baseline for each and look at various models for each borough. The baseline of the model I will use is the median of the borough price. I chose the median over the mean so that outliers don't sckew the data. I will try 5 different models to compare each borough to; linear regression, decision tree, bagging regressor, random forest, and extra trees. I will be judging the models on R^2, Mean squared error, Root mean squared error, and the mean of the residuals. The residuals are the mean of the absolute value of the actual value minus the predicted value.
 
 ### Manhattan:
 
@@ -384,7 +384,7 @@ Score on testing set: 0.98443
 | --- | ---- | --------- |
 | 705.07 | 26.55 | 7.7 |
 
-Random Forest is the best model. So we will use that for the streamlit app.
+Random Forest is the best model. So I will use that for the streamlit app.
 
 ### Queens:
 
