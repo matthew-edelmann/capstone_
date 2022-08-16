@@ -1,11 +1,5 @@
 # capstone_
 
-Give a why first. 
-
-AirBnB has been ...
-This project aims to ...
-
-
 ## Problem Statement:
 AirBnB is a company founded in 2008. It allows home owners/renters to temporarily use their places as a hotel. The user has to put their own value per night for the guest to pay. I wanted to see if I could predict the price of an AirBnB in the New York City area. I was aiming at someone who has a space in the New York City area, and may want to use it for an AirBnB. I will try to give them an estamated price based on the borough they live in and other factors. I will also give them the errors with the model, as there are many factors I may not have such as their rent price or living expenses.
 
