@@ -120,6 +120,7 @@ Testing R2: 0.19491185140151768
 #### Decision Tree:
 
 R^2:
+
 Score on training set: 0.47327
 
 Score on testing set: 0.60287
@@ -131,6 +132,7 @@ Score on testing set: 0.60287
 #### Bagging Regressor:
 
 R^2:
+
 Score on training set: 0.47280
 
 Score on testing set: 0.59523
@@ -142,6 +144,7 @@ Score on testing set: 0.59523
 #### Random Forest:
 
 R^2:
+
 Score on training set: 0.47327
 
 Score on testing set: 0.60339
@@ -153,6 +156,7 @@ Score on testing set: 0.60339
 #### Extra Trees:
 
 R^2:
+
 Score on training set: 0.47327
 
 Score on testing set: 0.60287
@@ -179,6 +183,7 @@ These models are generally good. It has the best linear regression of all the bo
 #### Linear Regression:
 
 R^2:
+
 Training R2: 0.97333
 
 Testing R2: 0.97445
@@ -190,6 +195,7 @@ Testing R2: 0.97445
 #### Decision Tree:
 
 R^2:
+
 Score on training set: 0.97333
 
 Score on testing set: 0.97445
@@ -201,6 +207,7 @@ Score on testing set: 0.97445
 #### Bagging Regressor:
 
 R^2:
+
 Score on training set: 0.97331
 
 Score on testing set: 0.97442
@@ -212,6 +219,7 @@ Score on testing set: 0.97442
 #### Random Forest:
 
 R^2:
+
 Score on training set: 0.97333
 
 Score on testing set: 0.97444
@@ -223,6 +231,7 @@ Score on testing set: 0.97444
 #### Extra Trees:
 
 R^2:
+
 Score on training set: 0.97333
 
 Score on testing set: 0.97445
@@ -246,6 +255,7 @@ This borough has the best models based on R^2, MSE, RMSE, and residuals.
 #### Linear Regression:
 
 R^2:
+
 Training R2: 0.85720
 
 Testing R2: 0.85789
@@ -257,6 +267,7 @@ Testing R2: 0.85789
 #### Decision Tree:
 
 R^2:
+
 Score on training set: 0.98882
 
 Score on testing set: 0.98901
@@ -268,6 +279,7 @@ Score on testing set: 0.98901
 #### Bagging Regressor:
 
 R^2:
+
 Score on training set: 0.98881
 
 Score on testing set: 0.98897
@@ -279,6 +291,7 @@ Score on testing set: 0.98897
 #### Random Forest:
 
 R^2:
+
 Score on training set: 0.98882
 
 Score on testing set: 0.98901
@@ -290,6 +303,7 @@ Score on testing set: 0.98901
 #### Extra Trees:
 
 R^2:
+
 Score on training set: 0.98882
 
 Score on testing set: 0.98901
@@ -313,6 +327,7 @@ This borough has the second best models after the Bronx based on R^2 scores. The
 #### Linear Regression:
 
 R^2:
+
 Training R2: 0.23615
 
 Testing R2: 0.24419
@@ -324,6 +339,7 @@ Testing R2: 0.24419
 #### Decision Tree:
 
 R^2:
+
 Score on training set: 0.98579
 
 Score on testing set: 0.98443
@@ -335,6 +351,7 @@ Score on testing set: 0.98443
 #### Bagging Regressor:
 
 R^2:
+
 Score on training set: 0.98578
 
 Score on testing set: 0.98443
@@ -346,6 +363,7 @@ Score on testing set: 0.98443
 #### Random Forest:
 
 R^2:
+
 Score on training set: 0.98578
 
 Score on testing set: 0.98443
@@ -357,6 +375,7 @@ Score on testing set: 0.98443
 #### Extra Trees:
 
 R^2:
+
 Score on training set: 0.98579
 
 Score on testing set: 0.98443
@@ -380,6 +399,7 @@ These models are overall very good based on all metrics.
 #### Linear Regression:
 
 R^2:
+
 Training R2: 0.67111
 
 Testing R2: 0.67306
@@ -391,7 +411,9 @@ Testing R2: 0.67306
 #### Decision Tree:
 
 R^2:
+
 Score on training set: 0.92299
+
 Score on testing set: 0.92385
 
 | MSE | RMSE | Residuals |
@@ -401,6 +423,7 @@ Score on testing set: 0.92385
 #### Bagging Regressor:
 
 R^2:
+
 Score on training set: 0.92298
 
 Score on testing set: 0.92383
@@ -412,6 +435,7 @@ Score on testing set: 0.92383
 #### Random Forest:
 
 R^2:
+
 Score on training set: 0.92299
 
 Score on testing set: 0.92386
@@ -423,6 +447,7 @@ Score on testing set: 0.92386
 #### Extra Trees:
 
 R^2:
+
 Score on training set: 0.92299
 
 Score on testing set: 0.92385
