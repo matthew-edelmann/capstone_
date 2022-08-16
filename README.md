@@ -96,7 +96,7 @@ To create the models, I will look at the entries for each borough and try to mak
 
 ### Manhattan:
 
-The Manhattan model is the least accurate as we will see in a bit. Let's first look at the baseline of the Manhattan model:
+The Manhattan model is the least accurate by every metric as we will see in a bit. Let's first look at the baseline of the Manhattan model:
 
 #### Baseline:
 
@@ -113,10 +113,6 @@ Training R2: 0.141631773839774
 
 Testing R2: 0.19491185140151768
 
-MSE: 175396.3974895145
-RMSE: 418.803530894278
-Residuals: 117.34281586432186
-
 | MSE   | RMSE  | Residuals   |
 | ----- | ----- | ----------- |
 | 175396.4 | 418.8 | 117.34 |
@@ -125,26 +121,29 @@ Residuals: 117.34281586432186
 
 R^2:
 Score on training set: 0.47327498499947585
+
 Score on testing set: 0.6028663936001599
 
-MSE: 86519.4749243413
-RMSE: 294.14192989837625
-Residuals: 13.617887454514777
+| MSE   | RMSE  | Residuals   |
+| ----- | ----- | ----------- |
+| 86519.47 | 294.14 | 13.62 |
 
 #### Bagging Regressor:
 
 R^2:
 Score on training set: 0.47280214893033623
+
 Score on testing set: 0.59523060376535
 
-MSE: 88183.00708705328
-RMSE: 296.9562376631501
-Residuals: 13.903125737731443
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- |
+| 88183.01 | 296.96 | 13.9 |
 
 #### Random Forest:
 
 R^2:
 Score on training set: 0.4732710850238875
+
 Score on testing set: 0.6033909604476098
 
 MSE: 86405.19286038929
@@ -167,7 +166,7 @@ Bagging seems to be the best models. I will go with bagging for the streamlit ap
 
 ### Staten Island:
 
-These models are generally good. It has the best linear regression of all the boroughs.
+These models are generally good. It has the best linear regression of all the boroughs based on all the metrics.
 
 #### Baseline:
 
@@ -229,7 +228,7 @@ Decision Tree and Extra Trees are the best models here. So I'll go with the deci
 
 ### Bronx:
 
-This borough has the best models.
+This borough has the best models based on R^2, MSE, RMSE, and residuals.
 
 #### Baseline:
 
@@ -291,7 +290,7 @@ Decision Tree and Extra Trees are the best models here. So I'll go with the deci
 
 ### Brooklyn:
 
-This borough has the second best models after the Bronx. The linear regression model however, isn't good here.
+This borough has the second best models after the Bronx based on R^2 scores. The linear regression model however, isn't good here.
 
 #### Baseline:
 
@@ -353,7 +352,7 @@ Random Forest is the best model. So we will use that for the streamlit app.
 
 ### Queens:
 
-These models are overall very good.
+These models are overall very good based on all metrics.
 
 #### Baseline:
 
