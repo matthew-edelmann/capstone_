@@ -26,9 +26,7 @@ With that the calendar dataframe is done. Now we will look at the listings data 
 
 With that finished I then merged the 2 dataframes together. The new dataframe is called df_full. Naturally there was some null values. I dropped them since it took up less than 1% of the data. Lastly, I created a month column that was derived from the date columns.
 
-Finally, I exported the data. You can view it here:
-
-* [`df_full.csv`](./data/df_full.csv)
+Finally, I exported the data.
 
 ## Exploratory Data Analysis
 
