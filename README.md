@@ -240,7 +240,7 @@ Score on testing set: 0.97445
 | --- | ---- | --------- |
 | 337.14 | 18.36 | 7.56 |
 
-Decision Tree and Extra Trees are the best models here. So I'll go with the decision tree for the streamlit app.
+Decision Tree and Extra Trees are the best models here. So I'll go with the decision tree for the streamlet app.
 
 ### Bronx:
 
