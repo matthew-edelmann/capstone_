@@ -9,27 +9,27 @@ def callback():
     st.session_state_button_clicked = True
 
 def load_mn():
-  with open('models/manhattan_pickle.pkl', 'rb') as f:
+  with open('models/pickled/manhattan_pickle.pkl', 'rb') as f:
     the_model = pickle.load(f)
   return the_model
 
 def load_si():
-    with open('models/staten_island_pickle.pkl', 'rb') as f:
+    with open('models/pickled/staten_island_pickle.pkl', 'rb') as f:
       the_model = pickle.load(f)
     return the_model
 
 def load_bx():
-    with open('models/bronx_pickle.pkl', 'rb') as f:
+    with open('models/pickled/bronx_pickle.pkl', 'rb') as f:
       the_model = pickle.load(f)
     return the_model
 
 def load_bk():
-    with open('models/brooklyn_pickle.pkl', 'rb') as f:
+    with open('models/pickled/brooklyn_pickle.pkl', 'rb') as f:
       the_model = pickle.load(f)
     return the_model
 
 def load_qu():
-    with open('models/queens_pickle.pkl', 'rb') as f:
+    with open('models/pickled/queens_pickle.pkl', 'rb') as f:
       the_model = pickle.load(f)
     return the_model
 
