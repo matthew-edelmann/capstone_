@@ -6,11 +6,7 @@ AirBnB is a company founded in 2008. It allows home owners/renters to temporaril
 ## The Data
 The data was colected from http://insideairbnb.com/get-the-data/. This is some data released from AirBnB. I downloaded the calendar and listings data from their New York file. A brief explaination of both is as follows. We are given an ID for both to merge them together. The calendar has all the dates that the AirBnB is available. They give dates, wheather or not it is available, price, and the minimum and maximum nights one can stay. The listings has much more information. We get information about its location, the host, specs about the AirBnB such as bedrooms and bathrooms, the type of stay, info about the reviews and much more.
 
-The files to the csv are here:
-
-* [`calendar.csv`](./data/calendar.csv)
-
-* [`listings.csv`](./data/listings.csv)
+The files are too big to upload to github. To download them, go to http://insideairbnb.com/get-the-data/ scroll down to "New York City, New York, United States" and download both listings.csv.gz and calendar.csv.gz
 
 ## Cleaning
 
