@@ -4,9 +4,9 @@
 AirBnB is a company founded in 2008. It allows home owners/renters to temporarily use their places as a hotel. The user has to put their own value per night for the guest to pay. I wanted to see if I could predict the price of an AirBnB in the New York City area. I was aiming at someone who has a space in the New York City area, and may want to use it for an AirBnB. I will try to give them an estamated price based on the borough they live in and other factors. I will also give them the errors with the model, as there are many factors I may not have such as their rent price or living expenses.
 
 ## The Data
-The data was colected from http://insideairbnb.com/get-the-data/. This is some data released from AirBnB. I downloaded the calendar and listings data from their New York file. A brief explaination of both is as follows. We are given an ID for both to merge them together. The calendar has all the dates that the AirBnB is available. They give dates, wheather or not it is available, price, and the minimum and maximum nights one can stay. The listings has much more information. We get information about its location, the host, specs about the AirBnB such as bedrooms and bathrooms, the type of stay, info about the reviews and much more.
+The data was colected from this [website](http://insideairbnb.com/get-the-data/). This is some data released from AirBnB. I downloaded the calendar and listings data from their New York file. A brief explaination of both is as follows. We are given an ID for both to merge them together. The calendar has all the dates that the AirBnB is available. They give dates, wheather or not it is available, price, and the minimum and maximum nights one can stay. The listings has much more information. We get information about its location, the host, specs about the AirBnB such as bedrooms and bathrooms, the type of stay, info about the reviews and much more.
 
-The files are too big to upload to github. To download them, go to http://insideairbnb.com/get-the-data/ scroll down to "New York City, New York, United States" and download both listings.csv.gz and calendar.csv.gz
+The files are too big to upload to github. To download them, go to [inside airbnb](http://insideairbnb.com/get-the-data/), scroll down to "New York City, New York, United States" and download both listings.csv.gz and calendar.csv.gz
 
 ## Cleaning
 
@@ -19,7 +19,7 @@ To clean the data, I had to fix or delete much of the entries as well as merge t
 
 With that the calendar dataframe is done. Now we will look at the listings data frame. Here are the steps I took to clean it up.
 
-1. Drop unneccisary columns. I droped at different parts of the cleaning but will only put it here once. Here is a full list of the columns that I droped: 'listing_url', 'scrape_id', 'last_scraped', 'name', 'listing_url', 'scrape_id', 'last_scraped', 'name', 'picture_url', 'host_url', 'host_name', 'host_since', 'host_thumbnail_url', 'host_picture_url', 'calendar_last_scraped', 'host_location', 'description', 'neighborhood_overview', 'host_about', 'host_response_rate', 'host_acceptance_rate', 'neighbourhood', 'bathrooms', 'bathrooms_text', 'bedrooms', 'calendar_updated', 'first_review', 'last_review', 'license', 'host_neighbourhood', 'reviews_per_month', 'host_total_listings_count', 'minimum_minimum_nights', 'maximum_minimum_nights', 'minimum_maximum_nights', 'maximum_maximum_nights', 'minimum_nights_avg_ntm', 'maximum_nights_avg_ntm', 'availability_30', 'availability_60', 'availability_90', 'number_of_reviews_ltm', 'number_of_reviews_l30d', 'calculated_host_listings_count_entire_homes', 'calculated_host_listings_count_private_rooms', and 'calculated_host_listings_count_shared_rooms'.
+1. Drop all unneccisary columns. In total it was 46 columns. 
 2. Filling nan values with the word 'unknown' in the following columns: host_response_time colunm, 'review_scores_rating', 'review_scores_accuracy', 'review_scores_cleanliness', 'review_scores_checkin', 'review_scores_communication', 'review_scores_location', and 'review_scores_value'
 3. I fixed the price value to be a float value type
 4. Then droped nan values
@@ -120,9 +120,9 @@ Testing R2: 0.19491185140151768
 #### Decision Tree:
 
 R^2:
-Score on training set: 0.47327498499947585
+Score on training set: 0.47327
 
-Score on testing set: 0.6028663936001599
+Score on testing set: 0.60287
 
 | MSE   | RMSE  | Residuals   |
 | ----- | ----- | ----------- |
@@ -131,9 +131,9 @@ Score on testing set: 0.6028663936001599
 #### Bagging Regressor:
 
 R^2:
-Score on training set: 0.47280214893033623
+Score on training set: 0.47280
 
-Score on testing set: 0.59523060376535
+Score on testing set: 0.59523
 
 | MSE | RMSE | Residuals |
 | --- | ---- | --------- |
@@ -142,23 +142,24 @@ Score on testing set: 0.59523060376535
 #### Random Forest:
 
 R^2:
-Score on training set: 0.4732710850238875
+Score on training set: 0.47327
 
-Score on testing set: 0.6033909604476098
+Score on testing set: 0.60339
 
-MSE: 86405.19286038929
-RMSE: 293.94760223616265
-Residuals: 13.603366390914191
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- |
+| 86405.19 | 293.95 | 13.6 |
 
 #### Extra Trees:
 
 R^2:
-Score on training set: 0.47327498499947573
-Score on testing set: 0.6028663936001599
+Score on training set: 0.47327
 
-MSE: 86519.4749243413
-RMSE: 294.14192989837625
-Residuals: 13.617887454514777
+Score on testing set: 0.60287
+
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- |
+| 86519.47 | 294.14 | 13.62 |
 
 The models are slightly underfit but still better than the baseline.
 
@@ -170,59 +171,65 @@ These models are generally good. It has the best linear regression of all the bo
 
 #### Baseline:
 
-MSE: 14305.233561643836
-RMSE: 119.60448804975437
-Residuals: 55.72054794520548
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- |
+| 14305.23 | 119.6 | 55.72 |
+
 
 #### Linear Regression:
 
 R^2:
-Training R2: 0.9733313324844002
-Testing R2: 0.9744491143128797
+Training R2: 0.97333
 
-MSE: 337.1530138825717
-RMSE: 18.361726876374448
-Residuals: 7.564854452054795
+Testing R2: 0.97445
+
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- |
+| 337.15 | 18.36 | 7.56 |
 
 #### Decision Tree:
 
 R^2:
-Score on training set: 0.9733315022216071
-Score on testing set: 0.9744500709956425
+Score on training set: 0.97333
 
-MSE: 337.1403901136449
-RMSE: 18.361383120931954
-Residuals: 7.5585589891145
+Score on testing set: 0.97445
+
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- |
+| 337.14 | 18.36 | 7.56 |
 
 #### Bagging Regressor:
 
 R^2:
-Score on training set: 0.9733123505922943
-Score on testing set: 0.9744209033250809
+Score on training set: 0.97331
 
-MSE: 337.52526788885
-RMSE: 18.37186076283102
-Residuals: 7.636950988061424
+Score on testing set: 0.97442
+
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- |
+| 337.53 | 18.37 | 7.64 |
 
 #### Random Forest:
 
 R^2:
-Score on training set: 0.9733300689324852
-Score on testing set: 0.9744372153071654
+Score on training set: 0.97333
 
-MSE: 337.3100254902293
-RMSE: 18.3660018918171
-Residuals: 7.546183324322898
+Score on testing set: 0.97444
+
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- |
+| 337.31 | 18.37 | 7.55 |
 
 #### Extra Trees:
 
 R^2:
-Score on training set: 0.9733315022216071
-Score on testing set: 0.9744500709956425
+Score on training set: 0.97333
 
-MSE: 337.14039011364497
-RMSE: 18.361383120931958
-Residuals: 7.558558989114516
+Score on testing set: 0.97445
+
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- |
+| 337.14 | 18.36 | 7.56 |
 
 Decision Tree and Extra Trees are the best models here. So I'll go with the decision tree for the streamlit app.
 
@@ -232,59 +239,64 @@ This borough has the best models based on R^2, MSE, RMSE, and residuals.
 
 #### Baseline:
 
-MSE: 1481.3062785388129
-RMSE: 38.48774192569386
-Residuals: 29.70433789954338
+| MSE | RMSE | Residuals | 
+| --- | ---- | --------- |
+| 1481.31 | 38.49 | 29.7 |
 
 #### Linear Regression:
 
 R^2:
-Training R2: 0.8571985277314411
-Testing R2: 0.8578894589148285
+Training R2: 0.85720
 
-MSE: 208.24912690807247
-RMSE: 14.430839438787768
-Residuals: 10.531000612429917
+Testing R2: 0.85789
+
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- |
+| 208.25 | 14.43 | 10.53 |
 
 #### Decision Tree:
 
 R^2:
-Score on training set: 0.9888160419467622
-Score on testing set: 0.9890075801431886
+Score on training set: 0.98882
 
-MSE: 16.108318357721032
-RMSE: 4.013516956202008
-Residuals: 2.1321772593829293
+Score on testing set: 0.98901
+
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- |
+| 16.11 | 4.01 | 2.13 |
 
 #### Bagging Regressor:
 
 R^2:
-Score on training set: 0.9888120445955765
-Score on testing set: 0.9889705258511065
+Score on training set: 0.98881
 
-MSE: 16.16261780599123
-RMSE: 4.020275837052879
-Residuals: 2.127471242963113
+Score on testing set: 0.98897
+
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- |
+| 16.16 | 4.02 | 2.13 |
 
 #### Random Forest:
 
 R^2:
-Score on training set: 0.988815684910948
-Score on testing set: 0.9890069237984309
+Score on training set: 0.98882
 
-MSE: 16.109280166899293
-RMSE: 4.013636775656125
-Residuals: 2.12941708540968
+Score on testing set: 0.98901
+
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- |
+| 16.11 | 4.01 | 2.12  |
 
 #### Extra Trees:
 
 R^2:
-Score on training set: 0.9888160419467622
-Score on testing set: 0.9890075801431886
+Score on training set: 0.98882
 
-MSE: 16.108318357721032
-RMSE: 4.013516956202008
-Residuals: 2.1321772593829396
+Score on testing set: 0.98901
+
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- |
+| 16.11 | 4.01 | 2.13 |
 
 Decision Tree and Extra Trees are the best models here. So I'll go with the decision tree for the streamlit app.
 
@@ -294,59 +306,64 @@ This borough has the second best models after the Bronx based on R^2 scores. The
 
 #### Baseline:
 
-MSE: 51664.94394049151
-RMSE: 227.29923875915534
-Residuals: 79.9874885123958
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- |
+| 51664.94 | 227.3 | 79.99 |
 
 #### Linear Regression:
 
 R^2:
-Training R2: 0.23614506938114876
-Testing R2: 0.2441888702106123
+Training R2: 0.23615
 
-MSE: 34223.0373617357
-RMSE: 184.99469549621065
-Residuals: 58.22872328815034
+Testing R2: 0.24419
+
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- |
+| 34223.04 | 184.99 | 58.23 |
 
 #### Decision Tree:
 
 R^2:
-Score on training set: 0.9857853579984303
-Score on testing set: 0.9844286292511029
+Score on training set: 0.98579
 
-MSE: 705.0698010512767
-RMSE: 26.55315049200898
-Residuals: 7.699352561114326
+Score on testing set: 0.98443
+
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- |
+| 705.07 | 26.55 | 7.7 |
 
 #### Bagging Regressor:
 
 R^2:
-Score on training set: 0.9857823912653305
-Score on testing set: 0.9844264832704798
+Score on training set: 0.98578
 
-MSE: 705.1669707966654
-RMSE: 26.55498015056056
-Residuals: 7.698506449112763
+Score on testing set: 0.98443
+
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- |
+| 705.17 | 26.55 | 7.7 |
 
 #### Random Forest:
 
 R^2:
-Score on training set: 0.9857848707447079
-Score on testing set: 0.9844297674782121
+Score on training set: 0.98578
 
-MSE: 705.018262264204
-RMSE: 26.552179990806856
-Residuals: 7.698351297468124
+Score on testing set: 0.98443
+
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- |
+| 705.02 | 26.55 | 7.7 |
 
 #### Extra Trees:
 
 R^2:
-Score on training set: 0.9857853579984303
-Score on testing set: 0.9844286292511029
+Score on training set: 0.98579
 
-MSE: 705.0698010512764
-RMSE: 26.553150492008974
-Residuals: 7.699352561114326
+Score on testing set: 0.98443
+
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- |
+| 705.07 | 26.55 | 7.7 |
 
 Random Forest is the best model. So we will use that for the streamlit app.
 
@@ -356,59 +373,63 @@ These models are overall very good based on all metrics.
 
 #### Baseline:
 
-MSE: 12372.576095273356
-RMSE: 111.23208213134085
-Residuals: 47.750573861532764
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- |
+| 12372.58 | 111.23 | 47.75 |
 
 #### Linear Regression:
 
 R^2:
-Training R2: 0.6711136176693455
-Testing R2: 0.6730646354403718
+Training R2: 0.67111
 
-MSE: 3922.9925580837375
-RMSE: 62.63379725103483
-Residuals: 39.74589721731444
+Testing R2: 0.67306
+
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- |
+| 3922.99 | 62.63 | 39.75 | 
 
 #### Decision Tree:
 
 R^2:
-Score on training set: 0.9229920151689808
-Score on testing set: 0.9238511265992795
+Score on training set: 0.92299
+Score on testing set: 0.92385
 
-MSE: 913.7324867252249
-RMSE: 30.228008315554384
-Residuals: 18.656372874490017
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- |
+| 913.73 | 30.23 | 18.66 |
 
 #### Bagging Regressor:
 
 R^2:
-Score on training set: 0.9229761235119394
-Score on testing set: 0.9238294210101952
+Score on training set: 0.92298
 
-MSE: 913.9929384036823
-RMSE: 30.23231612701353
-Residuals: 18.66594178789647
+Score on testing set: 0.92383
+
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- |
+| 913.99 | 30.23 | 18.67 |
 
 #### Random Forest:
 
 R^2:
-Score on training set: 0.922991193675232
-Score on testing set: 0.923859534322173
+Score on training set: 0.92299
 
-MSE: 913.631600012079
-RMSE: 30.226339507325047
-Residuals: 18.65645526128962
+Score on testing set: 0.92386
+
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- |
+| 913.63 | 30.23 | 18.66 |
 
 #### Extra Trees:
 
 R^2:
-Score on training set: 0.9229920151689808
-Score on testing set: 0.9238511265992795
+Score on training set: 0.92299
 
-MSE: 913.7324867252249
-RMSE: 30.228008315554384
-Residuals: 18.656372874490017
+Score on testing set: 0.92385
+
+| MSE | RMSE | Residuals |
+| --- | ---- | --------- | 
+| 913.73 | 30.23 | 18.66 |
 
 Decision Tree and Extra Trees are the best models here. So I'll go with the decision tree for the streamlit app.
 
@@ -432,3 +453,5 @@ After that, select the borough and the app will spit out an estimated price.
 ## Conclusion
 
 In conclusion, I was able to make a model that did as I wanted it to. My goal was to estimate the price of an AirBnB in the New York area, and have a potential AirBnB'r use it to determine the estimated price of there place. I was able to do this in all 5 boroughs, with all except Manhattan having an R^2 score of over 92%. Overall, I would say the project was a success.
+
+If given more time I would try to use GridSearch models to get even more accuarate models. I would also try to make the Streamlit app even cleaner looking and a bit more user friendly. If possible, I might try to look for more data to include things like average income of the neighborhood or square feet of the AirBnB. I think that could be valuable information in creating a good model. 
