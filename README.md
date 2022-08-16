@@ -100,10 +100,6 @@ The Manhattan model is the least accurate as we will see in a bit. Let's first l
 
 #### Baseline:
 
-MSE: 293408.1920075854
-RMSE: 541.6716643942024
-Residuals: 126.11349825279127
-
 | MSE       | RMSE   | Residuals   |
 | --------- | ------ | ----------- |
 | 293408.19 | 541.67 | 126.11      |
@@ -120,6 +116,10 @@ Testing R2: 0.19491185140151768
 MSE: 175396.3974895145
 RMSE: 418.803530894278
 Residuals: 117.34281586432186
+
+| MSE   | RMSE  | Residuals   |
+| ----- | ----- | ----------- |
+| 175396.4 | 418.8 | 117.34 |
 
 #### Decision Tree:
 
