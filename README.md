@@ -92,7 +92,7 @@ This heatmap shows which boroughs are most correlated with price:
 
 ## Modelling
 
-To create the models, I will look at the entries for each borough and try to make a different model for each where needed. I'll make a baseline for each and look at various models for each borough. The baseline of the model I will use is the median of the borough price. I chose the median over the mean so that outliers don't sckew the data. We will try 5 different models to compare each borough to; linear regression, decision tree, bagging regressor, random forest, and extra trees.
+To create the models, I will look at the entries for each borough and try to make a different model for each where needed. I'll make a baseline for each and look at various models for each borough. The baseline of the model I will use is the median of the borough price. I chose the median over the mean so that outliers don't sckew the data. We will try 5 different models to compare each borough to; linear regression, decision tree, bagging regressor, random forest, and extra trees. We will be judging the models on R^2, Mean squared error, Root mean squared error, and the mean of the residuals. The residuals are the mean of the absolute value of the actual value minus the predicted value.
 
 ### Manhattan:
 
@@ -104,10 +104,17 @@ MSE: 293408.1920075854
 RMSE: 541.6716643942024
 Residuals: 126.11349825279127
 
+| MSE       | RMSE   | Residuals   |
+| --------- | ------ | ----------- |
+| 293408.19 | 541.67 | 126.11      |
+
+
 #### Linear Regression:
 
 R^2:
+
 Training R2: 0.141631773839774
+
 Testing R2: 0.19491185140151768
 
 MSE: 175396.3974895145
